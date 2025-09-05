@@ -1,0 +1,11 @@
+params:
+    - id: firefly_password
+      type: string
+      name: "firefly admin password"
+      description: "firefly admin password for login"
+
+locales:
+    zh:
+        firefly_password:
+            name: "firefly管理员密码"
+            description: "管理员密码，用于保护管理UI界面"
