@@ -1,0 +1,20 @@
+package: lazycat.community.app.firefly-wg
+version: 4.4.0
+name: Firefly WireGuard Server
+description: "最简单易用的轻量级、高性能 WireGuard 服务端软件，可广泛用于异地组网、远程办公、内网穿透等场景。"
+min_os_version: "1.5.0"
+homepage: https://github.com/Safe3/firefly
+author: Safe3
+locales:
+  zh:
+    name: "萤火虫 WireGuard Server"
+    description: "最简单易用的轻量级、高性能 WireGuard 服务端软件，可广泛用于异地组网、远程办公、内网穿透等场景。"
+  zh_CN:
+    name: "萤火虫 WireGuard Server"
+    description: "最简单易用的轻量级、高性能 WireGuard 服务端软件，可广泛用于异地组网、远程办公、内网穿透等场景。"
+  en:
+    name: "Firefly WireGuard Server"
+    description: "Firefly is a simple and easy to install WireGuard server software, which can be widely used in scenarios such as remote networking, remote work, and expose a local server behind a NAT or firewall to the internet."
+  ja:
+    name: "萤火虫 WireGuard Server"
+    description: "最も簡単で使いやすい軽量かつ高性能なWireGuardサーバーソフトウェアであり、遠隔地のネットワーク構築、リモートワーク、イントラネット透過などのシーンで広く利用できます。"

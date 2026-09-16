@@ -1,0 +1,29 @@
+application:
+  subdomain: firefly-wg
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://host.lzcapp:50121
+
+services:
+  firefly:
+    # upstream: uusec/firefly:4.4
+    image: docker.1ms.run/uusec/firefly:4.4
+    network_mode: host
+    netadmin: true
+    environment:
+      - FIREFLY_PASSWORD={{.U.firefly_password}}
+      - TZ=Asia/Shanghai
+      # - FIREFLY_DEVICE=eth0
+      # - FIREFLY_AUTO_SSL=false
+      # - FIREFLY_PORT=50121
+    binds:
+      - /lzcapp/var/conf:/firefly/conf
+    setup_script: |
+      # v1 compose_override 提供的 /dev/net/tun 设备与 /lib/modules 挂载在 v2 无对应字段；
+      # 具备 NET_ADMIN（netadmin: true）后手动创建 tun 设备作为等价替代
+      mkdir -p /dev/net
+      [ -c /dev/net/tun ] || mknod /dev/net/tun c 10 200
+      chmod 600 /dev/net/tun
